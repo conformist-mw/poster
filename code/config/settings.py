@@ -30,6 +30,11 @@ PROJECT_APPS = [
 
 INSTALLED_APPS = DEFAULT_APPS + PROJECT_APPS
 
+if DEBUG:
+    INSTALLED_APPS.extend([
+        'debug_toolbar',
+    ])
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

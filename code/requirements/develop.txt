@@ -1,5 +1,6 @@
 -r production.txt
 
+django-debug-toolbar==3.2.2
 flake8-broken-line==0.3.0
 flake8-bugbear==21.9.2
 flake8-builtins==1.5.3
