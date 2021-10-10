@@ -15,6 +15,8 @@ DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
+INTERNAL_IPS = ['127.0.0.1', 'localhost', '172.18.0.1']
+
 DEFAULT_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -30,11 +32,6 @@ PROJECT_APPS = [
 
 INSTALLED_APPS = DEFAULT_APPS + PROJECT_APPS
 
-if DEBUG:
-    INSTALLED_APPS.extend([
-        'debug_toolbar',
-    ])
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -44,6 +41,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+if DEBUG:
+    INSTALLED_APPS.extend([
+        'debug_toolbar',
+    ])
+    MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
 
 ROOT_URLCONF = 'config.urls'
 
