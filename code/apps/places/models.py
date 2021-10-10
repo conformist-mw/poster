@@ -11,6 +11,25 @@ class Place(models.Model):
     def __str__(self):
         return self.title
 
+    def get_point(self):
+        return {
+            'type': 'Point',
+            'coordinates': [self.longitude, self.latitude]
+        }
+
+    def get_properties(self, request):
+        images = [
+            request.build_absolute_uri(image.image.url)
+            for image in self.images.all()
+        ]
+        return {
+            'title': self.title,
+            'placeId': self.id,
+            'imgs': images,
+            'short_description': self.description_short,
+            'long_description': self.description_long,
+        }
+
 
 class PlaceImage(models.Model):
     image = models.ImageField(upload_to='images')
