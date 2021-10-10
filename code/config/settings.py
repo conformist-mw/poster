@@ -28,6 +28,7 @@ DEFAULT_APPS = [
 
 PROJECT_APPS = [
     'apps.core.apps.CoreConfig',
+    'apps.places.apps.PlacesConfig',
 ]
 
 INSTALLED_APPS = DEFAULT_APPS + PROJECT_APPS
