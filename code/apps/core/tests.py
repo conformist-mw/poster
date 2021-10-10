@@ -4,4 +4,4 @@ def test_index(client):
     assert 'core/index.html' in [
         template.name for template in response.templates
     ]
-    assert 'Start Page' in response.content.decode()
+    assert 'Куда пойти — Москва глазами Артёма' in response.content.decode()
