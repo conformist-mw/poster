@@ -26,12 +26,16 @@ DEFAULT_APPS = [
     'django.contrib.staticfiles',
 ]
 
+THIRDPARTY_APPS = [
+    'adminsortable2',
+]
+
 PROJECT_APPS = [
     'apps.core.apps.CoreConfig',
     'apps.places.apps.PlacesConfig',
 ]
 
-INSTALLED_APPS = DEFAULT_APPS + PROJECT_APPS
+INSTALLED_APPS = DEFAULT_APPS + THIRDPARTY_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
