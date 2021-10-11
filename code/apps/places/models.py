@@ -28,6 +28,10 @@ class Place(models.Model):
             'imgs': images,
             'short_description': self.description_short,
             'long_description': self.description_long,
+            'coordinates': {
+                'lng': self.longitude,
+                'lat': self.latitude,
+            }
         }
 
 
