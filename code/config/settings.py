@@ -28,6 +28,7 @@ DEFAULT_APPS = [
 
 THIRDPARTY_APPS = [
     'adminsortable2',
+    'tinymce',
 ]
 
 PROJECT_APPS = [
