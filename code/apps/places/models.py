@@ -15,7 +15,7 @@ class Place(models.Model):
     def get_point(self):
         return {
             'type': 'Point',
-            'coordinates': [self.longitude, self.latitude]
+            'coordinates': [self.longitude, self.latitude],
         }
 
     def get_properties(self, request):
@@ -32,7 +32,7 @@ class Place(models.Model):
             'coordinates': {
                 'lng': self.longitude,
                 'lat': self.latitude,
-            }
+            },
         }
 
 
